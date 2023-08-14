@@ -3,6 +3,7 @@ nlsy_cols <- c("glasses", "eyesight", "sleep_wkdy", "sleep_wknd",
 							 "income", "res_1980", "res_2002", "age_bir")
 
 library(tidyverse)
+#doesn't work,cuz different directory
 setwd("~/Documents/Teaching/Emory/epi590r-inclass/data/raw/")
 nlsy <- read_csv("nlsy.csv",
 								 na = c("-1", "-2", "-3", "-4", "-5", "-998"),
@@ -20,3 +21,5 @@ nlsy <- na.omit(nlsy)
 
 setwd("../clean/")
 write_rds(nlsy, "nlsy-complete-cases.rds")
+
+install.packages("here")
